@@ -1,0 +1,24 @@
+int findMax(const vector<int>& arr) {
+    int opCount = 0; // 初始化
+
+    // 初始化
+    int max = arr[0];  
+    opCount += 2; // 1次寫入+1次讀取
+
+    // 循环查找最大值
+    for (int i = 1; i < arr.size(); i++) {
+        opCount += 1; // i++ 的操作
+
+        // 條件判断
+        if (arr[i] > max) {  
+            opCount += 2; // 1次比較+1次讀取
+            max = arr[i];  
+            opCount += 2; // 1次寫入+1次讀取
+        }
+    }
+
+    opCount += 1; // return 的操作
+    cout << "總操作次數: " << opCount << endl;
+
+    return max;
+}
