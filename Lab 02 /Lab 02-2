@@ -1,0 +1,27 @@
+void printPairs(const vector<int>& arr) {
+    int stepCount = 0; // 初始化
+
+    // 初始化計數
+    stepCount++; 
+
+    for (int i = 0; i < arr.size(); i++) {
+        stepCount++; // 比較計數
+
+        // 初始化計數
+        stepCount++;
+
+        for (int j = i + 1; j < arr.size(); j++) {
+            stepCount++; // 比較計數
+
+            // 印操作計數
+            stepCount++;
+            cout << arr[i] << "," << arr[j] << endl;
+        }
+
+        stepCount++; // 內層的計數
+    }
+
+    stepCount++; // 外層的計數
+
+    cout << "總操作次數: " << stepCount << endl;
+}
