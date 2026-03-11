@@ -1,0 +1,14 @@
+void copyArray(const vector<int>& source, vector<int>& dest) {
+    int stepCount = 0; // 初始化計數
+
+    // 初始化
+    stepCount++;
+
+    for (int i = 0; i < source.size(); i++) {
+        stepCount++; // 比較計數
+        stepCount++; // 操作計數
+    }
+
+    stepCount++; // 循環結束後計數
+    cout << "總操作次數: " << stepCount << endl;
+}
