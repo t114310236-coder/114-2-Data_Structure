@@ -1,0 +1,22 @@
+class Solution {
+public:
+    int findLucky(std::vector<int>& arr) {
+        //統計每個數字出現的次數
+        std::unordered_map<int, int> freq;
+        for (int v : arr) {
+            ++freq[v]; // 對應計數器增加
+        }
+
+        int best = -1; // 儲存目前找到的最大幸運整數，初始為 -
+        // 統計結果，檢查值是否等於其出現次數
+        for (const auto &p : freq) {
+            int val = p.first;   // 數字本身
+            int count = p.second; // 出現次數
+            // 若數字等於出現次數，且比目前 best 大，則更新 best
+            if (val == count && val > best) {
+                best = val;
+            }
+        }
+        return best;
+    }
+};
